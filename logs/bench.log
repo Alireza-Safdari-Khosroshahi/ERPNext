@@ -1,0 +1,43 @@
+2022-02-02 13:09:06,299 DEBUG cd /opt/bench/erpnext && /usr/local/bin/virtualenv --quiet env -p python3
+2022-02-02 13:09:07,367 DEBUG cd /opt/bench/erpnext && /opt/bench/erpnext/env/bin/python -m pip install --quiet --upgrade pip
+2022-02-02 13:09:11,609 LOG Getting frappe
+2022-02-02 13:09:11,610 DEBUG cd erpnext/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2022-02-02 13:09:16,105 LOG Installing frappe
+2022-02-02 13:09:16,106 DEBUG cd /opt/bench/erpnext && /opt/bench/erpnext/env/bin/python -m pip install --quiet --upgrade -e /opt/bench/erpnext/apps/frappe 
+2022-02-02 13:10:01,884 DEBUG cd /opt/bench/erpnext/apps/frappe && yarn install
+2022-02-02 13:10:22,957 DEBUG cd erpnext && bench build
+2022-02-02 13:10:23,307 INFO /usr/local/bin/bench build
+2022-02-02 13:11:32,664 LOG setting up backups
+2022-02-02 13:11:32,681 LOG backups were set up
+2022-02-02 13:11:32,682 INFO Bench erpnext initialized
+2022-02-02 13:11:58,317 INFO /usr/local/bin/bench new-site erp.mahbod.com
+2022-02-02 13:12:08,813 INFO /usr/local/bin/bench new-site erp.mahbod.com
+2022-02-02 13:13:18,389 INFO /usr/local/bin/bench new-site erp.mahbod.com
+2022-02-02 13:15:28,013 INFO /usr/local/bin/bench get-app branch version-13 erpnext https://github.com/frappe/erpnext
+2022-02-02 13:15:29,636 LOG Getting erpnext
+2022-02-02 13:15:29,637 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext  --depth 1 --origin upstream
+2022-02-02 13:15:35,156 LOG Installing erpnext
+2022-02-02 13:15:35,158 DEBUG cd /opt/bench/erpnext && /opt/bench/erpnext/env/bin/python -m pip install --quiet --upgrade -e /opt/bench/erpnext/apps/erpnext 
+2022-02-02 13:16:00,583 DEBUG cd /opt/bench/erpnext/apps/erpnext && yarn install
+2022-02-02 13:16:02,835 DEBUG bench build --app erpnext
+2022-02-02 13:16:03,174 INFO /usr/local/bin/bench build --app erpnext
+2022-02-02 13:16:45,485 INFO /usr/local/bin/bench --site erp.mahbod.com install-app erpnext
+2022-02-02 13:19:44,937 INFO /usr/local/bin/bench start
+2022-02-02 13:19:47,486 INFO /usr/local/bin/bench worker --queue long
+2022-02-02 13:19:47,655 INFO /usr/local/bin/bench worker --queue short
+2022-02-02 13:19:47,715 INFO /usr/local/bin/bench schedule
+2022-02-02 13:19:47,724 INFO /usr/local/bin/bench serve --port 8000
+2022-02-02 13:19:47,743 INFO /usr/local/bin/bench watch
+2022-02-02 13:19:47,791 INFO /usr/local/bin/bench worker --queue default
+2022-02-02 15:17:39,442 INFO /usr/local/bin/bench set-config developer_mode 1
+2022-02-02 15:21:38,439 INFO /usr/local/bin/bench clear-cache
+2022-02-02 15:22:10,270 INFO /usr/local/bin/bench setup requirements --dev
+2022-02-02 15:22:12,150 DEBUG cd /opt/bench/erpnext && /opt/bench/erpnext/env/bin/python -m pip install --quiet --upgrade -r ./apps/erpnext/dev-requirements.txt
+2022-02-02 15:22:17,265 DEBUG cd /opt/bench/erpnext && /opt/bench/erpnext/env/bin/python -m pip install --quiet --upgrade -r ./apps/frappe/dev-requirements.txt
+2022-02-02 16:32:20,163 INFO /usr/local/bin/bench start
+2022-02-02 16:32:23,243 INFO /usr/local/bin/bench schedule
+2022-02-02 16:32:23,414 INFO /usr/local/bin/bench worker --queue long
+2022-02-02 16:32:23,429 INFO /usr/local/bin/bench serve --port 8000
+2022-02-02 16:32:23,460 INFO /usr/local/bin/bench worker --queue short
+2022-02-02 16:32:23,483 INFO /usr/local/bin/bench worker --queue default
+2022-02-02 16:32:23,515 INFO /usr/local/bin/bench watch
