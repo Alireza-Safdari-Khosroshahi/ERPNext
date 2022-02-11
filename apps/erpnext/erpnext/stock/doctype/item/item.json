@@ -1049,7 +1049,7 @@
    "fieldname": "pfand_item",
    "fieldtype": "Link",
    "label": "Pfand Item",
-   "options": "Item"
+   "options": "Pfand"
   }
  ],
  "has_web_view": 1,
@@ -1058,7 +1058,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-02-11 08:31:15.584722",
+ "modified": "2022-02-11 10:59:37.227450",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Item",
