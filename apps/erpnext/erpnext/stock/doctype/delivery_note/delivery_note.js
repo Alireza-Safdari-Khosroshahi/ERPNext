@@ -376,3 +376,40 @@ frappe.tour['Delivery Note'] = [
 		description: __("This option can be checked to edit the 'Posting Date' and 'Posting Time' fields.")
 	}
 ]
+ 
+frappe.ui.form.on("Delivery Note Item", {
+	item_code: function(frm){
+		// console.log(frm)
+		let itemCode = frm.doc.items[0].item_code;
+		if (itemCode){	
+			frappe.call({
+				method: "erpnext.stock.doctype.delivery_note.delivery_note.get_data_form_sql",
+				args:{item_code: itemCode}
+			}).done((r)=> {
+				// for debuging uncommit the following line 
+				// console.log(r.message[0].end_of_life);
+
+				//add all info from Pfand item into delivery Note Item
+				// console.log(r.message[0]);
+				let entry =frm.add_child("items");
+				entry.item_code = r.message[0].item_code;
+				// console.log(r.message[0].item_code);
+				entry.item_name = r.message[0].item_name;
+				// console.log(r.message[0].item_name);
+				entry.description = r.message[0].description;
+				// console.log(r.message[0].description);
+				entry.rate = r.message[0].valuation_rate;
+				// console.log(r.message[0].valuation_rate);
+				entry.qty = 1;
+				entry.uom = r.message[0].stock_uom;
+				// console.log(r.message[0].stock_uom);
+				refresh_field("items");
+			})
+		}
+	},
+	qty: function(frm){
+		// console.log(frm)
+		let items = frm.doc.items
+		console.log(items)
+	}
+   });
